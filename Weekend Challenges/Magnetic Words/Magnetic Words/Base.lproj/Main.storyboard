@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Magnetic_Words" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bn-4J-6az" userLabel="Board View">
+                                <rect key="frame" x="16" y="20" width="568" height="534"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSG-wI-UMj" userLabel="Words View">
+                                        <rect key="frame" x="0.0" y="383" width="568" height="151"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="151" id="v7z-i8-uYz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OSG-wI-UMj" secondAttribute="trailing" id="Eko-qd-Wfi"/>
+                                    <constraint firstAttribute="bottom" secondItem="OSG-wI-UMj" secondAttribute="bottom" id="SlY-OX-mC1"/>
+                                    <constraint firstItem="OSG-wI-UMj" firstAttribute="leading" secondItem="2bn-4J-6az" secondAttribute="leading" id="iMl-ie-HKU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3W-hU-iWE" userLabel="Horizontal Line">
+                                <rect key="frame" x="16" y="553" width="568" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="cO4-S3-8N9"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3g-iV-4QI" userLabel="New Button">
+                                <rect key="frame" x="16" y="562" width="213" height="30"/>
+                                <state key="normal" title="New">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newWordsPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DYe-4t-ais"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUB-uq-WU1" userLabel="Add Button">
+                                <rect key="frame" x="371" y="562" width="213" height="30"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2bn-4J-6az" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="02F-0R-ocO"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="vUB-uq-WU1" secondAttribute="bottom" constant="8" id="0LL-Xc-DP0"/>
+                            <constraint firstItem="vUB-uq-WU1" firstAttribute="top" secondItem="g3W-hU-iWE" secondAttribute="bottom" constant="8" id="2cA-v9-jVD"/>
+                            <constraint firstItem="Z3g-iV-4QI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="43Q-Ry-f43"/>
+                            <constraint firstItem="g3W-hU-iWE" firstAttribute="top" secondItem="2bn-4J-6az" secondAttribute="bottom" constant="-1" id="4Jx-iW-tcB"/>
+                            <constraint firstItem="2bn-4J-6az" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="4jv-3Q-20k"/>
+                            <constraint firstItem="vUB-uq-WU1" firstAttribute="leading" secondItem="Z3g-iV-4QI" secondAttribute="trailing" constant="142" id="7M0-h1-6vH"/>
+                            <constraint firstItem="g3W-hU-iWE" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Ehg-tN-a2b"/>
+                            <constraint firstItem="vUB-uq-WU1" firstAttribute="width" secondItem="Z3g-iV-4QI" secondAttribute="width" id="Eri-ni-pRb"/>
+                            <constraint firstItem="g3W-hU-iWE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="XxN-Ev-RG7"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Z3g-iV-4QI" secondAttribute="bottom" constant="8" id="gfb-qy-v2u"/>
+                            <constraint firstItem="vUB-uq-WU1" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="mi7-3j-6pU"/>
+                            <constraint firstItem="2bn-4J-6az" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="nOK-E9-om7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boardView" destination="2bn-4J-6az" id="8it-Bl-3sa"/>
+                        <outlet property="wordsView" destination="OSG-wI-UMj" id="V5V-9b-dYj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-198" y="24"/>
+        </scene>
+    </scenes>
+</document>

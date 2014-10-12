@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED72D76B19EA335600F6CA85 /* ProximaNovaCond-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = ED72D76A19EA335600F6CA85 /* ProximaNovaCond-Light.otf */; };
+		EDF4944219E8D43100B26EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4944119E8D43100B26EA7 /* AppDelegate.swift */; };
+		EDF4944419E8D43100B26EA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4944319E8D43100B26EA7 /* ViewController.swift */; };
+		EDF4944719E8D43100B26EA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF4944519E8D43100B26EA7 /* Main.storyboard */; };
+		EDF4944919E8D43100B26EA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF4944819E8D43100B26EA7 /* Images.xcassets */; };
+		EDF4945819E8D43100B26EA7 /* Magnetic_WordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4945719E8D43100B26EA7 /* Magnetic_WordsTests.swift */; };
+		EDFEE16419E8E92D00A64948 /* haiku.txt in Resources */ = {isa = PBXBuildFile; fileRef = EDFEE16319E8E92D00A64948 /* haiku.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDF4945219E8D43100B26EA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDF4943419E8D43100B26EA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDF4943B19E8D43100B26EA7;
+			remoteInfo = "Magnetic Words";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED72D76A19EA335600F6CA85 /* ProximaNovaCond-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaCond-Light.otf"; sourceTree = "<group>"; };
+		EDF4943C19E8D43100B26EA7 /* Magnetic Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magnetic Words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF4944019E8D43100B26EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF4944119E8D43100B26EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDF4944319E8D43100B26EA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDF4944619E8D43100B26EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDF4944819E8D43100B26EA7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EDF4945119E8D43100B26EA7 /* Magnetic WordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Magnetic WordsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF4945619E8D43100B26EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF4945719E8D43100B26EA7 /* Magnetic_WordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magnetic_WordsTests.swift; sourceTree = "<group>"; };
+		EDFEE16319E8E92D00A64948 /* haiku.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = haiku.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDF4943919E8D43100B26EA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF4944E19E8D43100B26EA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED72D76319EA2A1900F6CA85 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ED72D76A19EA335600F6CA85 /* ProximaNovaCond-Light.otf */,
+				EDFEE16319E8E92D00A64948 /* haiku.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EDF4943319E8D43100B26EA7 = {
+			isa = PBXGroup;
+			children = (
+				EDF4943E19E8D43100B26EA7 /* Magnetic Words */,
+				EDF4945419E8D43100B26EA7 /* Magnetic WordsTests */,
+				EDF4943D19E8D43100B26EA7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDF4943D19E8D43100B26EA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDF4943C19E8D43100B26EA7 /* Magnetic Words.app */,
+				EDF4945119E8D43100B26EA7 /* Magnetic WordsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDF4943E19E8D43100B26EA7 /* Magnetic Words */ = {
+			isa = PBXGroup;
+			children = (
+				EDF4944119E8D43100B26EA7 /* AppDelegate.swift */,
+				EDF4944319E8D43100B26EA7 /* ViewController.swift */,
+				EDF4944519E8D43100B26EA7 /* Main.storyboard */,
+				ED72D76319EA2A1900F6CA85 /* Resources */,
+				EDF4943F19E8D43100B26EA7 /* Supporting Files */,
+			);
+			path = "Magnetic Words";
+			sourceTree = "<group>";
+		};
+		EDF4943F19E8D43100B26EA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDF4944819E8D43100B26EA7 /* Images.xcassets */,
+				EDF4944019E8D43100B26EA7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDF4945419E8D43100B26EA7 /* Magnetic WordsTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDF4945719E8D43100B26EA7 /* Magnetic_WordsTests.swift */,
+				EDF4945519E8D43100B26EA7 /* Supporting Files */,
+			);
+			path = "Magnetic WordsTests";
+			sourceTree = "<group>";
+		};
+		EDF4945519E8D43100B26EA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDF4945619E8D43100B26EA7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDF4943B19E8D43100B26EA7 /* Magnetic Words */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF4945B19E8D43100B26EA7 /* Build configuration list for PBXNativeTarget "Magnetic Words" */;
+			buildPhases = (
+				EDF4943819E8D43100B26EA7 /* Sources */,
+				EDF4943919E8D43100B26EA7 /* Frameworks */,
+				EDF4943A19E8D43100B26EA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Magnetic Words";
+			productName = "Magnetic Words";
+			productReference = EDF4943C19E8D43100B26EA7 /* Magnetic Words.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDF4945019E8D43100B26EA7 /* Magnetic WordsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF4945E19E8D43100B26EA7 /* Build configuration list for PBXNativeTarget "Magnetic WordsTests" */;
+			buildPhases = (
+				EDF4944D19E8D43100B26EA7 /* Sources */,
+				EDF4944E19E8D43100B26EA7 /* Frameworks */,
+				EDF4944F19E8D43100B26EA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDF4945319E8D43100B26EA7 /* PBXTargetDependency */,
+			);
+			name = "Magnetic WordsTests";
+			productName = "Magnetic WordsTests";
+			productReference = EDF4945119E8D43100B26EA7 /* Magnetic WordsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDF4943419E8D43100B26EA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Blue Spell";
+				TargetAttributes = {
+					EDF4943B19E8D43100B26EA7 = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = F58U3Y48K3;
+					};
+					EDF4945019E8D43100B26EA7 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = EDF4943B19E8D43100B26EA7;
+					};
+				};
+			};
+			buildConfigurationList = EDF4943719E8D43100B26EA7 /* Build configuration list for PBXProject "Magnetic Words" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDF4943319E8D43100B26EA7;
+			productRefGroup = EDF4943D19E8D43100B26EA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDF4943B19E8D43100B26EA7 /* Magnetic Words */,
+				EDF4945019E8D43100B26EA7 /* Magnetic WordsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDF4943A19E8D43100B26EA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF4944719E8D43100B26EA7 /* Main.storyboard in Resources */,
+				EDF4944919E8D43100B26EA7 /* Images.xcassets in Resources */,
+				ED72D76B19EA335600F6CA85 /* ProximaNovaCond-Light.otf in Resources */,
+				EDFEE16419E8E92D00A64948 /* haiku.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF4944F19E8D43100B26EA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDF4943819E8D43100B26EA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF4944419E8D43100B26EA7 /* ViewController.swift in Sources */,
+				EDF4944219E8D43100B26EA7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF4944D19E8D43100B26EA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF4945819E8D43100B26EA7 /* Magnetic_WordsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDF4945319E8D43100B26EA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDF4943B19E8D43100B26EA7 /* Magnetic Words */;
+			targetProxy = EDF4945219E8D43100B26EA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDF4944519E8D43100B26EA7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDF4944619E8D43100B26EA7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDF4945919E8D43100B26EA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDF4945A19E8D43100B26EA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDF4945C19E8D43100B26EA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Magnetic Words/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "47039afc-9755-4e4f-b252-5e9495775406";
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Debug;
+		};
+		EDF4945D19E8D43100B26EA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Magnetic Words/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "47039afc-9755-4e4f-b252-5e9495775406";
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Release;
+		};
+		EDF4945F19E8D43100B26EA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Magnetic WordsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Magnetic Words.app/Magnetic Words";
+			};
+			name = Debug;
+		};
+		EDF4946019E8D43100B26EA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Magnetic WordsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Magnetic Words.app/Magnetic Words";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDF4943719E8D43100B26EA7 /* Build configuration list for PBXProject "Magnetic Words" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF4945919E8D43100B26EA7 /* Debug */,
+				EDF4945A19E8D43100B26EA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDF4945B19E8D43100B26EA7 /* Build configuration list for PBXNativeTarget "Magnetic Words" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF4945C19E8D43100B26EA7 /* Debug */,
+				EDF4945D19E8D43100B26EA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDF4945E19E8D43100B26EA7 /* Build configuration list for PBXNativeTarget "Magnetic WordsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF4945F19E8D43100B26EA7 /* Debug */,
+				EDF4946019E8D43100B26EA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDF4943419E8D43100B26EA7 /* Project object */;
+}
