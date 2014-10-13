@@ -22,28 +22,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let tagForRemoval = 666 // (da beast's number!!1)
     
     // This is OK in an iPhone/portrait
+    // Should check screen size and act accordingly
+    // Could be also parameterized
     let numberOfMagneticWordsPerMatch = 25
-    
-    // I'm starting at 900 for "safety"
-    // (so no other view with tag < 900 will be removed from the UI)
-    // Probably there are safer ways
-    let tagStartingNumber = 900
     
     // MARK: Logic
     
     override func viewDidLoad() {
         createWordList()
         customWordField.delegate = self
-    }
-    
-    // Gets the list of words from the file "haiku.txt"
-    func createWordList() {
-        if let path = NSBundle.mainBundle().pathForResource("haiku", ofType: "txt") {
-            var err: NSError? = NSError()
-            if let rawList = String.stringWithContentsOfFile(path, encoding: NSUTF8StringEncoding, error: &err) {
-                wordList = rawList.componentsSeparatedByString(" ")
-            }
-        }
     }
     
     // Changes the background color of the "magnetic board"
@@ -131,6 +118,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return magneticWord
     }
     
+    // Remove all magnetic words from the UI
+    func removeMagneticWords() {
+        for subview in view.subviews {
+            if let magneticWord = view.viewWithTag(tagForRemoval) {
+                magneticWord.removeFromSuperview()
+            }
+        }
+    }
+    
+    // MARK: Helpers
+    
+    // Gets the list of words from the file "haiku.txt"
+    func createWordList() {
+        if let path = NSBundle.mainBundle().pathForResource("haiku", ofType: "txt") {
+            var err: NSError? = NSError()
+            if let rawList = String.stringWithContentsOfFile(path, encoding: NSUTF8StringEncoding, error: &err) {
+                wordList = rawList.componentsSeparatedByString(" ")
+            }
+        }
+    }
+    
+    // Returns a random number between a minimum and a maximum number
+    // The return of this function can INCLUDE the minimum and the maximum
+    // Long story: http://bit.ly/generateRandomNumbersBetweenTwoNumbers
+    func randomNumberBetween(min: UInt32, max: UInt32) -> UInt32! {
+        return UInt32(min) + arc4random_uniform(UInt32(max) - UInt32(min) + 1)
+    }
+    
     // Defines the center of the  magnetic words
     // I'm limiting their center below the "magnetic board"
     // (that grey square in the UI)
@@ -151,40 +166,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // Set the center of the magnetic word
         magneticWord.center = CGPoint(x: CGFloat(randomX), y: CGFloat(randomY))
-    }
-    
-    // Remove all magnetic words from the UI
-    func removeMagneticWords() {
-        for subview in view.subviews {
-            if let magneticWord = view.viewWithTag(tagForRemoval) {
-                magneticWord.removeFromSuperview()
-            }
-        }
-    }
-
-    // When users press return, add the
-    // custom word (if any) in the board
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
-        customWordField.hidden = true
-        customWordField.resignFirstResponder()
-        
-        if let customWord = customWordField.text {
-            createMagneticWord(customWord, isCustom: true)
-        }
-        
-        // Clean up the field
-        customWordField.text = ""
-        
-        return true;
-    }
-    
-    // MARK: Helpers
-    
-    // Returns a random number between a minimum and a maximum number
-    // The return of this function can INCLUDE the minimum and the maximum
-    // Long story: http://bit.ly/generateRandomNumbersBetweenTwoNumbers
-    func randomNumberBetween(min: UInt32, max: UInt32) -> UInt32! {
-        return UInt32(min) + arc4random_uniform(UInt32(max) - UInt32(min) + 1)
     }
     
     // This is a slightly modified version of the following tutorial
@@ -220,6 +201,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 animations: {panGesture.view!.center = finalPoint },
                 completion: nil)
         }
+    }
+    
+    // When users press return, add the
+    // custom word (if any) in the board
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        customWordField.hidden = true
+        customWordField.resignFirstResponder()
+        
+        if let customWord = customWordField.text {
+            createMagneticWord(customWord, isCustom: true)
+        }
+        
+        // Clean up the field
+        customWordField.text = ""
+        
+        return true;
     }
 }
 
