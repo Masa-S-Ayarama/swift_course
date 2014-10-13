@@ -8,14 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Class Members
     
     @IBOutlet weak var boardView: UIView!
     @IBOutlet weak var wordsView: UIView!
+    @IBOutlet weak var customWordField: UITextField!
     
     var wordList: [String]!
+    
+    // Tag number for later word removal
+    let tagForRemoval = 666 // (da beast's number!!1)
     
     // This is OK in an iPhone/portrait
     let numberOfMagneticWordsPerMatch = 25
@@ -29,6 +33,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         createWordList()
+        customWordField.delegate = self
     }
     
     // Gets the list of words from the file "haiku.txt"
@@ -41,37 +46,48 @@ class ViewController: UIViewController {
         }
     }
     
+    // Changes the background color of the "magnetic board"
+    @IBAction func colorButtonPressed(sender: AnyObject) {
+        if let colorButton = sender as? UIButton {
+            boardView.backgroundColor = colorButton.backgroundColor
+        }
+    }
+    
+    // Creates new magnetic words
     @IBAction func newWordsPressed(sender: AnyObject) {
         // Remove magnetic words from UI
         removeMagneticWords()
-        
+
         // For word variety, shuffle the word list
         wordList.shuffle(wordList.count)
         
         for i in 0...numberOfMagneticWordsPerMatch {
-            
-            // Create a magnetic word
-            var magneticWord = createMagneticWord(wordList[i])
-            
-            // Tag it for later removal
-            magneticWord.tag = i + tagStartingNumber
-            
-            // Set its centers
-            defineMagneticWordsCenter(magneticWord)
-            
-            // Add it to the view
-            view.addSubview(magneticWord)
+            var magneticWord = createMagneticWord(wordList[i], isCustom: false)
         }
     }
     
+    // Adds custom magnetic word
+    @IBAction func addButtonPressed(sender: AnyObject) {
+        // Put the custom word field above any other view
+        customWordField.layer.zPosition = 1;
+        
+        // Show it
+        customWordField.hidden = false
+        customWordField.becomeFirstResponder()
+    }
+    
     // Creates magnetic words
-    func createMagneticWord(word: String) -> UILabel! {
+    func createMagneticWord(word: String, isCustom: Bool) -> UILabel! {
         let magneticWord = UILabel()
         
         // Style and text
-        magneticWord.backgroundColor = UIColor.whiteColor()
         magneticWord.text = word
         magneticWord.textAlignment = NSTextAlignment.Center
+        
+        // Adding a different background color for
+        // custom magnetic words. This way it's easier to
+        // visually identify them in the screen
+        magneticWord.backgroundColor = isCustom ? UIColor.lightGrayColor() : UIColor.whiteColor()
         
         // Size
         magneticWord.sizeToFit()
@@ -79,6 +95,9 @@ class ViewController: UIViewController {
         var rect = magneticWord.frame
         rect = CGRectInset(rect, -4, 0)
         magneticWord.frame = rect
+        
+        // Set its centers
+        defineMagneticWordsCenter(magneticWord)
         
         /*
          Now I got a little crazy and decided to add
@@ -94,15 +113,20 @@ class ViewController: UIViewController {
         let lineRight = UIView(frame: CGRectMake(magneticWord.frame.width, 0, 1, CGFloat(magneticWord.frame.height + 1)))
         lineRight.backgroundColor = UIColor.blackColor()
         
-        // Add them!
+        // Add the lines!
         magneticWord.addSubview(lineBottom)
         magneticWord.addSubview(lineRight)
-
         
         // Gesture recognizer
         let panGesture = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
         magneticWord.addGestureRecognizer(panGesture)
         magneticWord.userInteractionEnabled = true
+        
+        // Tag it for later removal
+        magneticWord.tag = tagForRemoval
+        
+        // Finally add it to the view
+        view.addSubview(magneticWord)
         
         return magneticWord
     }
@@ -131,11 +155,27 @@ class ViewController: UIViewController {
     
     // Remove all magnetic words from the UI
     func removeMagneticWords() {
-        for i in 0...numberOfMagneticWordsPerMatch {
-            if let magneticWord = view.viewWithTag(i + tagStartingNumber) {
+        for subview in view.subviews {
+            if let magneticWord = view.viewWithTag(tagForRemoval) {
                 magneticWord.removeFromSuperview()
             }
         }
+    }
+
+    // When users press return, add the
+    // custom word (if any) in the board
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        customWordField.hidden = true
+        customWordField.resignFirstResponder()
+        
+        if let customWord = customWordField.text {
+            createMagneticWord(customWord, isCustom: true)
+        }
+        
+        // Clean up the field
+        customWordField.text = ""
+        
+        return true;
     }
     
     // MARK: Helpers
@@ -147,33 +187,35 @@ class ViewController: UIViewController {
         return UInt32(min) + arc4random_uniform(UInt32(max) - UInt32(min) + 1)
     }
     
+    // This is a slightly modified version of the following tutorial
+    // http://bit.ly/gestureRecognizerTutorialRayWenderlich
     func handlePanGesture(panGesture: UIPanGestureRecognizer) {
         let translation = panGesture.translationInView(view)
         panGesture.setTranslation(CGPointZero, inView: view)
         
         let magneticWord = panGesture.view as UILabel
-        magneticWord.center = CGPoint(x: magneticWord.center.x + translation.x, y: magneticWord.center.y + translation.y)
+        magneticWord.center = CGPoint(
+            x: magneticWord.center.x + translation.x,
+            y: magneticWord.center.y + translation.y
+        )
         
         if panGesture.state == UIGestureRecognizerState.Ended {
-            // 1
             let velocity = panGesture.velocityInView(view)
             let magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y))
-            let slideMultiplier = magnitude / 200
-            println("magnitude: \(magnitude), slideMultiplier: \(slideMultiplier)")
+            let slideMultiplier = magnitude / 800
             
-            // 2
-            let slideFactor = 0.1 * slideMultiplier     //Increase for more of a slide
-            // 3
-            var finalPoint = CGPoint(x:panGesture.view!.center.x + (velocity.x * slideFactor),
-                y:panGesture.view!.center.y + (velocity.y * slideFactor))
-            // 4
-            finalPoint.x = min(max(finalPoint.x, 0), self.view.bounds.size.width)
-            finalPoint.y = min(max(finalPoint.y, 0), self.view.bounds.size.height)
+            let slideFactor = 0.1 * slideMultiplier // Increase for more of a slide
             
-            // 5
+            var finalPoint = CGPoint(
+                x:panGesture.view!.center.x + (velocity.x * slideFactor),
+                y:panGesture.view!.center.y + (velocity.y * slideFactor)
+            )
+            
+            finalPoint.x = min(max(finalPoint.x, 0), boardView.bounds.size.width)
+            finalPoint.y = min(max(finalPoint.y, 0), boardView.bounds.size.height)
+            
             UIView.animateWithDuration(Double(slideFactor * 2),
                 delay: 0,
-                // 6
                 options: UIViewAnimationOptions.CurveEaseOut,
                 animations: {panGesture.view!.center = finalPoint },
                 completion: nil)
@@ -198,8 +240,13 @@ class ViewController: UIViewController {
 */
 extension Array {
     mutating func shuffle(elements: Int!) {
-        for _ in 0..<elements {
-            sort { (_,_) in arc4random() < arc4random() }
-        }
+        
+        // This can be expansive so I'm
+        // running it in another thread
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            for _ in 0..<elements {
+                self.sort { (_,_) in arc4random() < arc4random() }
+            }
+        })
     }
 }
