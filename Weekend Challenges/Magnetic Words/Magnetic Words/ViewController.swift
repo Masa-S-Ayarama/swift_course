@@ -49,22 +49,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         wordList.shuffle(wordList.count)
         
         for i in 0...numberOfMagneticWordsPerMatch {
-            var magneticWord = createMagneticWord(wordList[i], isCustom: false)
+            createMagneticWord(wordList[i], isCustom: false)
         }
     }
     
-    // Adds custom magnetic word
+    // Shows the custom word input, opens the keyboard
     @IBAction func addButtonPressed(sender: AnyObject) {
         // Put the custom word field above any other view
         customWordField.layer.zPosition = 1;
         
         // Show it
         customWordField.hidden = false
+        
+        // Brings keyboard
         customWordField.becomeFirstResponder()
     }
     
     // Creates magnetic words
-    func createMagneticWord(word: String, isCustom: Bool) -> UILabel! {
+    func createMagneticWord(word: String, isCustom: Bool) {
         let magneticWord = UILabel()
         
         // Style and text
@@ -114,8 +116,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // Finally add it to the view
         view.addSubview(magneticWord)
-        
-        return magneticWord
     }
     
     // Remove all magnetic words from the UI
