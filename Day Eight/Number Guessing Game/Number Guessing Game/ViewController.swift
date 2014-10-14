@@ -19,14 +19,24 @@ class ViewController: UIViewController {
     // The number typed by the user
     var guessedNumber: Int!
     
+    // Field for input the guessed number
     @IBOutlet weak var numberTextField: UITextField!
+    
+    // Label that provides feedback for the user:
+    // Higher, lower or rigth on!
     @IBOutlet weak var feedbackLabel: UILabel!
     
     // MARK: IBActions
     @IBAction func guessButtonPressed(sender: AnyObject) {
+        
+        // First check if the field has a number
         if let input = numberTextField.text.toInt() {
             guessedNumber = input
+            
+            // Debug purposes
             println("Guessed number is: \(guessedNumber)")
+            
+            // Verify if the numbers match
             checkGuess()
         }
     }
@@ -40,15 +50,17 @@ class ViewController: UIViewController {
     
     // MARK: Logic
     override func viewDidLoad() {
+        
+        // Generates a random number at startup
         generateNewRandomNumber()
+        
+        // Debug purposes
         println("Random number is: \(randomNumber)")
     }
     
     // Compares the user input with the
     // generated random number
     func checkGuess() {
-        
-        showFeedbackLabel()
         
         if guessedNumber == randomNumber {
             setFeedbackLabelToRightOn()
@@ -59,6 +71,9 @@ class ViewController: UIViewController {
         } else {
             setFeedbackLabelToLower()
         }
+        
+        // The feedback label starts hidden
+        showFeedbackLabel()
     }
     
     // MARK: Helpers
