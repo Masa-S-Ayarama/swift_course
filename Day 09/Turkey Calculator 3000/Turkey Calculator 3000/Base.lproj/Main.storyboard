@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Turkey_Calculator_3000" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,113 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkey Calculator 3000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAF-I4-bqB">
+                                <rect key="frame" x="195" y="20" width="210" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of people:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bl0-KA-1CK">
+                                <rect key="frame" x="195" y="73" width="144" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsH-al-ZOj">
+                                <rect key="frame" x="385" y="73" width="20" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="l1s-KI-gFC">
+                                <rect key="frame" x="187" y="102" width="220" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="prW-N0-99I"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="numberOfPeopleSliderDidChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="n8y-eK-4u8"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turkey size: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAA-dw-EkP">
+                                <rect key="frame" x="195" y="140" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.5 lbs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbs-eB-Cyf">
+                                <rect key="frame" x="298" y="140" width="107" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="BOn-Il-tzQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thaw time: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fL-oO-wB2">
+                                <rect key="frame" x="195" y="169" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cook time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ug-VG-LdH">
+                                <rect key="frame" x="195" y="198" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:52 hours" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9n-LM-gfh">
+                                <rect key="frame" x="298" y="198" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45 hours" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVp-xA-vIU">
+                                <rect key="frame" x="298" y="169" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pAA-dw-EkP" firstAttribute="baseline" secondItem="tbs-eB-Cyf" secondAttribute="baseline" id="0hk-yx-P0G"/>
+                            <constraint firstItem="2fL-oO-wB2" firstAttribute="top" secondItem="pAA-dw-EkP" secondAttribute="bottom" constant="8" symbolic="YES" id="6Y2-Du-Z89"/>
+                            <constraint firstItem="MAF-I4-bqB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9hg-59-AHf"/>
+                            <constraint firstItem="2fL-oO-wB2" firstAttribute="leading" secondItem="8ug-VG-LdH" secondAttribute="leading" id="EAW-Kh-RO2"/>
+                            <constraint firstItem="tbs-eB-Cyf" firstAttribute="trailing" secondItem="UVp-xA-vIU" secondAttribute="trailing" id="FpN-g3-9mG"/>
+                            <constraint firstItem="D9n-LM-gfh" firstAttribute="baseline" secondItem="8ug-VG-LdH" secondAttribute="baseline" id="GyF-ST-YtJ"/>
+                            <constraint firstItem="dsH-al-ZOj" firstAttribute="baseline" secondItem="bl0-KA-1CK" secondAttribute="baseline" id="Ix7-OI-hjL"/>
+                            <constraint firstItem="pAA-dw-EkP" firstAttribute="leading" secondItem="bl0-KA-1CK" secondAttribute="leading" id="QSj-mu-Uac"/>
+                            <constraint firstItem="pAA-dw-EkP" firstAttribute="leading" secondItem="2fL-oO-wB2" secondAttribute="leading" id="UIM-us-67q"/>
+                            <constraint firstItem="D9n-LM-gfh" firstAttribute="trailing" secondItem="UVp-xA-vIU" secondAttribute="trailing" id="UxE-vX-kB9"/>
+                            <constraint firstItem="pAA-dw-EkP" firstAttribute="top" secondItem="l1s-KI-gFC" secondAttribute="bottom" constant="8" symbolic="YES" id="XuG-Xu-ela"/>
+                            <constraint firstItem="pAA-dw-EkP" firstAttribute="trailing" secondItem="2fL-oO-wB2" secondAttribute="trailing" id="YWc-2U-pHl"/>
+                            <constraint firstItem="8ug-VG-LdH" firstAttribute="top" secondItem="2fL-oO-wB2" secondAttribute="bottom" constant="8" symbolic="YES" id="bdI-F4-jEA"/>
+                            <constraint firstItem="2fL-oO-wB2" firstAttribute="trailing" secondItem="8ug-VG-LdH" secondAttribute="trailing" id="cxh-yl-Gql"/>
+                            <constraint firstItem="MAF-I4-bqB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dkh-h1-j7e"/>
+                            <constraint firstItem="l1s-KI-gFC" firstAttribute="trailing" secondItem="dsH-al-ZOj" secondAttribute="trailing" id="dlv-DM-y0o"/>
+                            <constraint firstItem="D9n-LM-gfh" firstAttribute="leading" secondItem="UVp-xA-vIU" secondAttribute="leading" id="i5t-ib-d3A"/>
+                            <constraint firstItem="tbs-eB-Cyf" firstAttribute="leading" secondItem="UVp-xA-vIU" secondAttribute="leading" id="iv8-pe-LVu"/>
+                            <constraint firstItem="bl0-KA-1CK" firstAttribute="top" secondItem="MAF-I4-bqB" secondAttribute="bottom" constant="29" id="l7W-8i-caX"/>
+                            <constraint firstItem="l1s-KI-gFC" firstAttribute="top" secondItem="bl0-KA-1CK" secondAttribute="bottom" constant="8" symbolic="YES" id="ni9-W7-exq"/>
+                            <constraint firstItem="bl0-KA-1CK" firstAttribute="leading" secondItem="MAF-I4-bqB" secondAttribute="leading" id="vUe-v9-Fv8"/>
+                            <constraint firstItem="l1s-KI-gFC" firstAttribute="trailing" secondItem="tbs-eB-Cyf" secondAttribute="trailing" id="w1g-6Y-7Nx"/>
+                            <constraint firstItem="2fL-oO-wB2" firstAttribute="baseline" secondItem="UVp-xA-vIU" secondAttribute="baseline" id="whq-Db-xIu"/>
+                            <constraint firstItem="dsH-al-ZOj" firstAttribute="trailing" secondItem="MAF-I4-bqB" secondAttribute="trailing" id="ybg-Sp-ypD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cookTimeLabel" destination="D9n-LM-gfh" id="QsF-zk-Vlg"/>
+                        <outlet property="numberOfPeopleLabel" destination="dsH-al-ZOj" id="v3F-Yc-g6c"/>
+                        <outlet property="numberOfPeopleSlider" destination="l1s-KI-gFC" id="ajO-6k-k0Q"/>
+                        <outlet property="thawTimeLabel" destination="UVp-xA-vIU" id="mLl-cW-VIM"/>
+                        <outlet property="turkeySizeLabel" destination="tbs-eB-Cyf" id="R8G-jQ-QFJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="456" y="417"/>
         </scene>
     </scenes>
 </document>
