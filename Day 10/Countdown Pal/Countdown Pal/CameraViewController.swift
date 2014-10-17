@@ -29,12 +29,14 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidAppear(animated)
         
         // Check if there is a valid image
+        // (user my be getting back from the camera)
         if (backgroundImage?.CGImage == nil && backgroundImage?.CIImage == nil) {
+            
+            // No valid image, present the camera view
             presentViewController(imagePicker, animated: true, completion: nil)
             
         } else {
-            // If there is a valid image
-            // show the event screen
+            // Image is valid, present the event view
             performSegueWithIdentifier("Show Event", sender: self)
         }
     }

@@ -105,14 +105,13 @@ class EventViewController: UIViewController {
     // Hours left (in fact hh:mm:ss)
     func displayHoursLeftForEvent() {
         let duration = eventDate!.timeIntervalSinceDate(NSDate())
-        println(duration)
         
         let hours = floor(duration / 60 / 60);
         let minutes = floor((duration - (hours * 60 * 60)) / 60);
         let seconds = floor(duration - (hours * 60 * 60) - (minutes * 60));
         
         timeToEventLabel.text =
-            String(format: "%02d:", Int(hours)) + // Max 99 hours
+            String(format: "%02d:", Int(hours)) +
             String(format: "%02d:", Int(minutes)) +
             String(format: "%02d", Int(seconds))
     }
