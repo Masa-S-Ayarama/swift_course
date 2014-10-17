@@ -94,7 +94,6 @@ class EventViewController: UIViewController {
         timeToEventLabel.text = String("\(dateComponentes.month) months")
     }
     
-    
     // Days left
     func displayDaysLeftForEvent() {
         invalidateTimer()
