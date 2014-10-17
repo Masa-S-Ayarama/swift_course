@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		ED0BACC619F07D2900BBE314 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BACC519F07D2900BBE314 /* AppDelegate.swift */; };
-		ED0BACC819F07D2900BBE314 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BACC719F07D2900BBE314 /* ViewController.swift */; };
+		ED0BACC819F07D2900BBE314 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BACC719F07D2900BBE314 /* WelcomeViewController.swift */; };
 		ED0BACCB19F07D2900BBE314 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0BACC919F07D2900BBE314 /* Main.storyboard */; };
 		ED0BACCD19F07D2900BBE314 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED0BACCC19F07D2900BBE314 /* Images.xcassets */; };
 		ED0BACD019F07D2900BBE314 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0BACCE19F07D2900BBE314 /* LaunchScreen.xib */; };
 		ED0BACDC19F07D2900BBE314 /* Countdown_PalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BACDB19F07D2900BBE314 /* Countdown_PalTests.swift */; };
+		ED0BACE619F085C800BBE314 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BACE519F085C800BBE314 /* EventViewController.swift */; };
+		ED61EE9619F0AE23001234CB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED61EE9519F0AE23001234CB /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +31,15 @@
 		ED0BACC019F07D2900BBE314 /* Countdown Pal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Countdown Pal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0BACC419F07D2900BBE314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED0BACC519F07D2900BBE314 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED0BACC719F07D2900BBE314 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED0BACC719F07D2900BBE314 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		ED0BACCA19F07D2900BBE314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED0BACCC19F07D2900BBE314 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ED0BACCF19F07D2900BBE314 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		ED0BACD519F07D2900BBE314 /* Countdown PalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Countdown PalTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0BACDA19F07D2900BBE314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED0BACDB19F07D2900BBE314 /* Countdown_PalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown_PalTests.swift; sourceTree = "<group>"; };
+		ED0BACE519F085C800BBE314 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		ED61EE9519F0AE23001234CB /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				ED0BACC519F07D2900BBE314 /* AppDelegate.swift */,
-				ED0BACC719F07D2900BBE314 /* ViewController.swift */,
+				ED0BACC719F07D2900BBE314 /* WelcomeViewController.swift */,
+				ED61EE9519F0AE23001234CB /* CameraViewController.swift */,
+				ED0BACE519F085C800BBE314 /* EventViewController.swift */,
 				ED0BACC919F07D2900BBE314 /* Main.storyboard */,
-				ED0BACCC19F07D2900BBE314 /* Images.xcassets */,
 				ED0BACCE19F07D2900BBE314 /* LaunchScreen.xib */,
 				ED0BACC319F07D2900BBE314 /* Supporting Files */,
 			);
@@ -90,6 +95,7 @@
 		ED0BACC319F07D2900BBE314 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ED0BACCC19F07D2900BBE314 /* Images.xcassets */,
 				ED0BACC419F07D2900BBE314 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED0BACC819F07D2900BBE314 /* ViewController.swift in Sources */,
+				ED0BACC819F07D2900BBE314 /* WelcomeViewController.swift in Sources */,
+				ED61EE9619F0AE23001234CB /* CameraViewController.swift in Sources */,
 				ED0BACC619F07D2900BBE314 /* AppDelegate.swift in Sources */,
+				ED0BACE619F085C800BBE314 /* EventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +415,7 @@
 				ED0BACE119F07D2900BBE314 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED0BACE219F07D2900BBE314 /* Build configuration list for PBXNativeTarget "Countdown PalTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +424,7 @@
 				ED0BACE419F07D2900BBE314 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
